@@ -21,14 +21,6 @@ jobs:
       - name: Adding built files to git
         run: git add .
 
-      - name: Commit and push
-        uses: github-actions-x/commit@v2.4
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          push-branch: 'add/actions-upload-artifact2'
-          commit-message: 'Build from ${{ github.head_ref }}'
-          force-add: 'true'
-
       - name: Upload build zip
         uses: actions/upload-artifact@v1
         with:
